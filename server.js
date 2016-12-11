@@ -3,35 +3,58 @@
 const express = require('express');
 const volleyball = require('volleyball');
 
+
 const app = express();
 
 app.use(volleyball);
 
 app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/public/images'));
 
 const puppies = [{
   id: 1,
-  name: 'Taylor',
-  image: 'https://designerdoginfo.files.wordpress.com/2013/01/puggle-puppy-4.jpg?w=584'
+  name: 'Max',
+  owner: 'Amy',
+  image: 'Amy-Max.jpg'
 }, {
   id: 2,
-  name: 'Reggie',
-  image: 'http://images.shape.mdpcdn.com/sites/shape.com/files/styles/slide/public/puppy-2_0.jpg'
+  name: 'Katie',
+  owner: 'Amy',
+  image: 'Amy-Katie.jpg'
 }, {
   id: 3,
-  name: 'Christian',
-  image: 'https://www.askideas.com/media/19/Papillon-Puppy-Looking.jpg'
+  name: 'Queen BowBow',
+  owner: 'Yoo-Nah',
+  image: 'yoonah-queen-bowbow.jpg'
 }, {
   id: 4,
-  name: 'Jessie',
-  image: 'http://www.101dogbreeds.com/wp-content/uploads/2015/10/Chi-Spaniel-Puppy-Pictures.jpg'
+  name: 'Tribble',
+  owner: 'Sean',
+  image: 'seans-tribble.jpg'
 }, {
   id: 5,
-  name: 'Pandora',
-  image: 'http://4.bp.blogspot.com/-3JeIxWBU7bY/UKjIt8lVpCI/AAAAAAAABx8/YM8piSOwczs/s1600/Schipperke-Puppy.jpg'
+  name: 'Rosie',
+  owner: 'Beth',
+  image: 'beth-rosie.jpg'
+},{
+  id: 6,
+  name: 'Oliver and Calvin',
+  owner: 'Evan',
+  image: 'evan-oliverNcalvin.jpg'
+},{
+  id: 7,
+  name: 'MC',
+  owner: 'Joe',
+  image: 'JoesPoodleMC.jpg'
+},{
+  id: 8,
+  name: 'Booker',
+  owner: 'Joey',
+  image: 'joey-booker.jpg'
 }];
 
 app.get('/api/puppies', function (req, res) {
+  console.log("In /api/puppies");
   res.json(puppies.map(({id, name}) => ({id, name})));
 });
 
@@ -41,7 +64,7 @@ app.get('/api/puppies/:id', function (req, res) {
   else res.json(aPuppy);
 });
 
-app.listen(3000, function () {
-  console.log('Server listening on port', 3000);
+app.listen(3001, function () {
+  console.log('Server listening on port', 3001);
 });
 

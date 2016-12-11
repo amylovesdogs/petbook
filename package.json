@@ -1,5 +1,5 @@
 {
-  "name": "puppybook",
+  "name": "petbook",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.15.3",
     "babel": "^6.5.2",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
